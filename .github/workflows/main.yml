@@ -1,4 +1,4 @@
-name: Cypress E2E on Chrome
+name: Cypress Tests on Chrome
 on: [push]
 jobs:
   cypress-run:
