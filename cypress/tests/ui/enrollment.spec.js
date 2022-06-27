@@ -5,6 +5,11 @@ describe("Enrollment", () => {
   });
 
   it("Can Register, Load Credit Score Page, and Log Out (Happy Path)", () => {
+    //intercept authenticate get request
+    cy.intercept("GET", "https://sandbox.array.io/api/authenticate/v2/*").as(
+      "getAuthenticate"
+    );
+
     // intercept report get request
     cy.intercept("GET", "https://sandbox.array.io/api/report/v2*").as(
       "getReport"
@@ -84,6 +89,9 @@ describe("Enrollment", () => {
 
     // click submit button
     cy.get("array-account-enroll").shadow().find("button[type=submit]").click();
+
+    // wait for report get request to complete
+    cy.wait("@getAuthenticate", { timeout: 10000 });
 
     // answer first verification question
     cy.get("array-account-enroll")
