@@ -1,6 +1,8 @@
 {
   "scripts": {
-    "cypress:open": "cypress open"
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "test:enrollment": "npm run cypress:run --spec 'cypress/tests/ui/enrollment.spec.js'"
   },
   "dependencies": {
     "cypress-real-events": "^1.7.1"
