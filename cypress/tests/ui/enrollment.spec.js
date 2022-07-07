@@ -157,7 +157,7 @@ describe("Enrollment", () => {
     // hover over settings in order for log out to appear
     cy.get("array-navbar")
       .shadow()
-      .find("div[class='menu svelte-16d358h active']")
+      .find("div[class='menu svelte-16dcemx active']")
       .eq(2)
       .contains("Settings")
       .realHover("mouse");
@@ -165,7 +165,7 @@ describe("Enrollment", () => {
     // click log out
     cy.get("array-navbar")
       .shadow()
-      .find("span[class='submenu logout svelte-16d358h']")
+      .find("span[class='submenu logout svelte-16dcemx']")
       .contains("Log out")
       .click();
   });
