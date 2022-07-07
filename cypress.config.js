@@ -7,5 +7,6 @@ module.exports = defineConfig({
     },
     baseUrl: "https://whitelabel.sandbox.array.io/",
     specPattern: "cypress/tests/**/*.{js, jsx}",
+    projectId: "379qxi",
   },
 });
